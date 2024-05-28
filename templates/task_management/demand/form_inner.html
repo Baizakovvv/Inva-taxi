@@ -1,0 +1,15 @@
+{% load crispy_forms_tags %}
+{% load task_management_tags %}
+<div class="col-md-12 type-selected">
+	{{ form.type_task|as_crispy_field }}
+</div>
+<div class="col-md-6">
+	{{ form.pick_up|as_crispy_field }}
+	{{ form.drop_off|as_crispy_field }}
+	{{ form.date|as_crispy_field }}
+</div>
+<div class="col-md-12">
+	{{ form.comment|as_crispy_field }}
+</div>
+
+

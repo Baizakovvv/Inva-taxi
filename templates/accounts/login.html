@@ -1,0 +1,106 @@
+
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	{% load crispy_forms_tags %}
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/font-awesome/css/all.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+
+</head>
+
+<body>
+
+	<!-- Header START -->
+<div id="sticky-space" class="" style="height: 0px;"></div>
+<main>
+<section class="position-relative pt-5">
+
+	<div class="container">
+		<div class="row g-4 g-sm-5 align-items-center">
+
+			<!-- Contact form START -->
+			<div class="col-lg-6" style="margin: 50px auto;">
+				<div class="card card-body shadow p-4 p-sm-5 position-relative">
+					<div class="col-lg-7 col-xl-6 text-center position-relative">
+
+							<div class="position-relative">
+								<img src="{% static 'assets/svg/taxi.gif' %}" alt="">
+
+							</div>
+						</div>
+
+					<!-- Form START -->
+					<h1 class="fs-2 mb-4">Инва Такси-ге кіру үшін!</h1>
+
+					<!-- Form START -->
+					<form action="" method="post">
+						<!-- Email -->
+						{% csrf_token %}
+						{{ form|crispy }}
+
+						<!-- Check box -->
+						<div class="mb-4 d-flex justify-content-between mb-4">
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="exampleCheck1">
+								<label class="form-check-label" for="exampleCheck1">Есту сақтап қалу</label>
+							</div>
+							<div class="text-primary-hover">
+								<a href="" class="text-secondary">
+									<u>Құпия сөзді ұмыту?</u>
+								</a>
+							</div>
+						</div>
+						<!-- Button -->
+						<div class="align-items-center mt-0">
+							<div class="d-grid">
+								<button class="btn btn-primary mb-0" type="submit">Кіру</button>
+							</div>
+						</div>
+					</form>
+					<!-- Form END -->
+
+					<!-- Social buttons and divider -->
+				
+
+					<!-- Sign up link -->
+					<div class="mt-4 text-center">
+						<span>Сізде аккаунт жоқ па? <a href="{% url 'student_register' %}"> Тіркелу</a></span>
+					</div>
+					<!-- Form END -->
+				</div>
+			</div>
+			<!-- Contact form END -->
+		</div>
+	</div>
+</section>
+</main>
+<!-- Header END -->
+
+<!-- Bootstrap JS -->
+<script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Template Functions -->
+<script src="{% static 'assets/js/functions.js' %}"></script>
+</body>
+</html>

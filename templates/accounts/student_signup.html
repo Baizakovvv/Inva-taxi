@@ -1,0 +1,90 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Зарегистрироваться</title>
+	{% load crispy_forms_tags %}
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/font-awesome/css/all.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+
+</head>
+
+<body>
+
+<!-- **************** MAIN CONTENT START **************** -->
+
+<main>
+<section class="position-relative pt-5">
+	<br><br><br>
+
+	<div class="container">
+		<div class="row g-4 g-sm-5 align-items-center">
+			<!-- Contact form START -->
+			<div class="col-lg-6" style="margin: 50px auto;">
+				<div class="card card-body shadow p-4 p-sm-5 position-relative">
+					<div class="col-lg-7 col-xl-6 text-center position-relative">
+
+							<div class="position-relative">
+								<img src="{% static 'assets/svg/taxi.gif' %}" alt="">
+
+							</div>
+						</div>
+
+					<!-- Form START -->
+					<form action="" method="post">
+						<h5 class="text-center">Жүйеге тіркелу
+						</h5>
+						<span class="d-block text-center mb-3">Жүйеге тіркелгеннен кейін қосымшаны қолдана аласыз</span>
+						{% csrf_token %}
+						{{ form|crispy }}
+						<input type="hidden" name="role" value="1">
+						<div class="align-items-center mt-0">
+							<div class="d-grid">
+								<button class="btn btn-primary mb-0" type="submit">Тіркелу </button>
+							</div>
+						</div>
+						<div class="mt-4 text-center">
+							<span>Жүйеге тіркелгенсіз бе? <a href="{% url 'accounts:login' %}">Жүйеге кіру</a></span>
+						</div>
+					</form>
+					<!-- Form END -->
+				</div>
+			</div>
+			<!-- Contact form END -->
+		</div>
+	</div>
+</section>
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+<!-- Bootstrap JS -->
+<script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Template Functions -->
+<script src="{% static 'assets/js/functions.js' %}"></script>
+
+</body>
+</html>
